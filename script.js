@@ -109,5 +109,44 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
   });
 });
 
+/* ===== Custom cursor ===== */
+if (matchMedia("(pointer:fine)").matches) {
+  const dot = document.createElement("div");
+  const ring = document.createElement("div");
+  dot.className = "cursor-dot";
+  ring.className = "cursor-ring";
+  document.body.append(dot, ring);
+  document.body.classList.add("cursor-active"); // now safe to hide native cursor
+
+  let mx = innerWidth / 2, my = innerHeight / 2;   // mouse
+  let rx = mx, ry = my;                            // ring (lerped)
+
+  addEventListener("mousemove", (e) => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+  });
+
+  (function loop() {
+    rx += (mx - rx) * 0.18;
+    ry += (my - ry) * 0.18;
+    ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+    requestAnimationFrame(loop);
+  })();
+
+  // Grow ring over interactive elements
+  const hoverSel = "a, button, [data-magnetic], .venture-row, .chip";
+  document.querySelectorAll(hoverSel).forEach((el) => {
+    el.addEventListener("mouseenter", () => ring.classList.add("hover"));
+    el.addEventListener("mouseleave", () => ring.classList.remove("hover"));
+  });
+
+  addEventListener("mousedown", () => ring.classList.add("down"));
+  addEventListener("mouseup", () => ring.classList.remove("down"));
+
+  // Hide when leaving the window
+  addEventListener("mouseleave", () => { dot.style.opacity = ring.style.opacity = "0"; });
+  addEventListener("mouseenter", () => { dot.style.opacity = ring.style.opacity = "1"; });
+}
+
 /* ===== Footer year ===== */
 document.getElementById("year").textContent = new Date().getFullYear();
