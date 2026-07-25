@@ -1,106 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="GdkIs47KlTqq8AAjm1Qx3R4zugBzrBDhZvqACmEQuRQ" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pranav C | Founder Portfolio</title>
-<meta name="description" content="Founder, developer, and student innovator building technology for healthcare, education, and collaboration.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pranav C — Portfolio</title>
+  <meta name="description" content="Pranav C — student founder building AI for education, healthcare, and wellbeing. Head of AI & Events at CodeStarters, Co-Founder & CMO at Public." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-<div id="loader">
-<h1>PRANAV C</h1>
-<p>Building Technology For Real Problems</p>
-</div>
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav-logo">Pranav&nbsp;C.</a>
+    <nav class="nav-links">
+      <a href="#about"><span>01</span> About</a>
+      <a href="#work"><span>02</span> Work</a>
+      <a href="#ventures"><span>03</span> Ventures</a>
+      <a href="#clients"><span>04</span> Clients</a>
+      <a href="#contact"><span>05</span> Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">Menu</button>
+  </header>
 
-<canvas id="bg"></canvas>
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <p class="hero-eyebrow reveal">Student · Founder · Educator — est. 2022</p>
+      <h1 class="hero-title">
+        <span class="line"><span class="line-in">Building <em>AI</em> that</span></span>
+        <span class="line"><span class="line-in">actually helps</span></span>
+        <span class="line"><span class="line-in">people.</span></span>
+      </h1>
+      <div class="hero-meta reveal">
+        <p>I'm Pranav — a U.S.-based student founder working across education, healthcare, and wellbeing. I teach AI to the next generation and build products people rely on.</p>
+        <a href="#work" class="arrow-link" data-magnetic>See the work <span>↓</span></a>
+      </div>
+    </section>
 
-<nav>
-<div class="logo">PRANAV C</div>
-<div>
-<button id="themeToggle">☀</button>
-</div>
-</nav>
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true" data-parallax="0.12">
+      <div class="marquee-track">
+        <span>Head of AI &amp; Events, CodeStarters ✳</span>
+        <span>Co-Founder &amp; CMO, Publick ✳</span>
+        <span>Founder, Aurelia ✳</span>
+        <span>Managing Director, One Sphere Array ✳</span>
+        <span>Head of AI &amp; Events, CodeStarters ✳</span>
+        <span>Co-Founder &amp; CMO, Publick ✳</span>
+        <span>Founder, Aurelia ✳</span>
+        <span>Managing Director, One Sphere Array ✳</span>
+      </div>
+    </div>
 
-<section class="hero">
-<div class="badge">Founder • Builder • Student Innovator</div>
-<h1>Building Technology<br><span>That Solves Real Problems.</span></h1>
-<p>High school founder creating AI-powered solutions for healthcare, education, and student collaboration.</p>
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="section-head reveal">
+        <span class="idx">(01)</span>
+        <span class="section-kicker">About</span>
+      </div>
+      <div class="about">
+        <p class="about-lead reveal">My programming journey began in 2022. Since then I've founded five products, led teams, and taught AI to hundreds of younger students.</p>
+        <div class="about-body reveal">
+          <p>I care about one thing: building technology that genuinely helps people — students who need a mentor, patients who need clarity, anyone trying to understand their own mind a little better.</p>
+          <p>Most of my time goes to <strong>CodeStarters</strong>, where I run bootcamps and hackathons and write the AI curriculum, and to <strong>Publick</strong>, the AI college counselor I co-founded. Everything else is detail.</p>
+        </div>
+      </div>
+    </section>
 
-<div class="stats">
-<div><h2>4+</h2><span>Years Coding</span></div>
-<div><h2>3</h2><span>Products Founded</span></div>
-<div><h2>1</h2><span>NGO Leadership Role</span></div>
-<div><h2>∞</h2><span>Ideas in Progress</span></div>
-</div>
-</section>
+    <!-- Work / Roles -->
+    <section class="section" id="work">
+      <div class="section-head reveal">
+        <span class="idx">(02)</span>
+        <span class="section-kicker">What I do</span>
+      </div>
+      <ul class="rolelist">
+        <li class="role reveal">
+          <div class="role-main">
+            <h3>Head of AI &amp; Events</h3>
+            <a class="role-org" href="https://codestarters.org" target="_blank" rel="noopener">CodeStarters ↗</a>
+          </div>
+          <p class="role-desc">I lead AI programming for a youth tech community — running bootcamps and hackathons, teaching AI to younger audiences, and designing the curriculum they learn from.</p>
+          <span class="role-year">Present</span>
+        </li>
+        <li class="role reveal">
+          <div class="role-main">
+            <h3>Co-Founder &amp; CMO</h3>
+            <a class="role-org" href="https://publick.app" target="_blank" rel="noopener">Publick ↗</a>
+          </div>
+          <p class="role-desc">Co-founded an AI college counselor that guides students through applications. I own marketing, brand, and growth.</p>
+          <span class="role-year">Present</span>
+        </li>
+        <li class="role reveal">
+          <div class="role-main">
+            <h3>Managing Director</h3>
+            <a class="role-org" href="https://osa.ngo" target="_blank" rel="noopener">One Sphere Array ↗</a>
+          </div>
+          <p class="role-desc">Lead initiatives at the intersection of software and social impact — including efforts to preserve California's Great America through petitions and public engagement.</p>
+          <span class="role-year">Present</span>
+        </li>
+      </ul>
+    </section>
 
-<section>
-<h2>About Me</h2>
-<div class="glass">
-<p>Hello! I'm Pranav C, a high school student based in the United States focused on solving meaningful problems through technology.</p>
-<p>I currently serve as Managing Director at One Sphere Array while building multiple startups and educational tools. Over the last four years, I've developed websites, AI tools, and platforms that tackle challenges in healthcare, education, and collaboration.</p>
-<p>My mission is simple: build technology that genuinely helps people.</p>
-</div>
-</section>
+    <!-- Ventures -->
+    <section class="section" id="ventures">
+      <div class="section-head reveal">
+        <span class="idx">(03)</span>
+        <span class="section-kicker">Things I've built</span>
+      </div>
+      <ol class="ventures">
+        <li class="venture reveal">
+          <a class="venture-row" href="https://publick.app" target="_blank" rel="noopener">
+            <span class="v-num" data-parallax="0.06">01</span>
+            <div class="v-body">
+              <span class="v-role">Co-Founder &amp; CMO</span>
+              <h3>Publick <span class="v-arrow">↗</span></h3>
+              <p>An AI college counselor that helps students navigate applications with clarity and confidence.</p>
+            </div>
+            <span class="v-tag">AI · EdTech</span>
+          </a>
+        </li>
+        <li class="venture reveal">
+          <a class="venture-row" href="https://aureliamood.vercel.app" target="_blank" rel="noopener">
+            <span class="v-num" data-parallax="0.06">02</span>
+            <div class="v-body">
+              <span class="v-role">Founder</span>
+              <h3>Aurelia <span class="v-arrow">↗</span></h3>
+              <p>An AI mood tracker that helps people notice patterns in how they feel and understand themselves better.</p>
+            </div>
+            <span class="v-tag">AI · Wellbeing</span>
+          </a>
+        </li>
+        <li class="venture reveal">
+          <a class="venture-row" href="https://medisummarize-alpha.vercel.app" target="_blank" rel="noopener">
+            <span class="v-num" data-parallax="0.06">03</span>
+            <div class="v-body">
+              <span class="v-role">Founder</span>
+              <h3>Medisummarize <span class="v-arrow">↗</span></h3>
+              <p>An AI healthcare assistant helping patients prepare for appointments and communicate symptoms clearly.</p>
+            </div>
+            <span class="v-tag">AI · Health</span>
+          </a>
+        </li>
+        <li class="venture reveal">
+          <a class="venture-row" href="https://futurely.lovable.app" target="_blank" rel="noopener">
+            <span class="v-num" data-parallax="0.06">04</span>
+            <div class="v-body">
+              <span class="v-role">Founder</span>
+              <h3>Futurely <span class="v-arrow">↗</span></h3>
+              <p>An educational platform helping students prepare smarter for tests, assignments, and learning goals.</p>
+            </div>
+            <span class="v-tag">EdTech</span>
+          </a>
+        </li>
+        <li class="venture reveal">
+          <a class="venture-row" href="https://studycluster.lovable.app" target="_blank" rel="noopener">
+            <span class="v-num" data-parallax="0.06">05</span>
+            <div class="v-body">
+              <span class="v-role">Founder</span>
+              <h3>StudyCluster <span class="v-arrow">↗</span></h3>
+              <p>A student collaboration platform built on the belief that no student should have to study alone.</p>
+            </div>
+            <span class="v-tag">Community</span>
+          </a>
+        </li>
+      </ol>
+    </section>
 
-<section>
-<h2>My Journey</h2>
-<div class="timeline">
-<div class="item"><h3>2022</h3><p>Began learning programming and web development.</p></div>
-<div class="item"><h3>2025</h3><p>Joined One Sphere Array and community initiatives.</p></div>
-<div class="item"><h3>2026</h3><p>Founded Futurely, Medisummarize, and StudyCluster.</p></div>
-</div>
-</section>
+    <!-- Client work -->
+    <section class="section" id="clients">
+      <div class="section-head reveal">
+        <span class="idx">(04)</span>
+        <span class="section-kicker">Client work</span>
+      </div>
+      <div class="clients">
+        <p class="clients-lead reveal">Beyond my own products, I build custom software for clients — shaped around the problem, not a template.</p>
+        <div class="clients-grid">
+          <div class="client-card reveal">
+            <span class="client-num">→</span>
+            <h3>Automation</h3>
+            <p>Scripts, bots, and pipelines that quietly remove repetitive work from a team's day.</p>
+          </div>
+          <div class="client-card reveal">
+            <span class="client-num">→</span>
+            <h3>Team &amp; Company Hubs</h3>
+            <p>Central dashboards where a company coordinates people, projects, and knowledge in one place.</p>
+          </div>
+          <div class="client-card reveal">
+            <span class="client-num">→</span>
+            <h3>Work Trackers</h3>
+            <p>Custom task and project trackers built to match how a specific team actually operates.</p>
+          </div>
+          <div class="client-card reveal">
+            <span class="client-num">→</span>
+            <h3>Bespoke Tools</h3>
+            <p>One-off web apps and internal tools designed around a single, particular need.</p>
+          </div>
+        </div>
+        <p class="clients-avail reveal"><span class="dot"></span> Available for freelance &amp; commissions</p>
+      </div>
+    </section>
 
-<section>
-<h2>Projects & Ventures</h2>
-<div class="grid">
-<div class="card"><h3>Medisummarize</h3><p>AI-powered healthcare assistant helping patients prepare for appointments and better communicate symptoms.</p></div>
-<div class="card"><h3>Futurely</h3><p>Educational platform helping students prepare smarter for tests, assignments, and learning goals.</p></div>
-<div class="card"><h3>StudyCluster</h3><p>A student collaboration platform built on the belief that no student should have to study alone.</p></div>
-</div>
-</section>
+    <!-- Skills -->
+    <section class="section skills-section reveal">
+      <span class="idx">Toolkit</span>
+      <p class="skills-line">
+        AI Integration · Product Development · Curriculum Design · JavaScript · HTML · CSS ·
+        Web Design · Debugging · Marketing &amp; Brand · Leadership · Teaching · Problem Solving
+      </p>
+    </section>
 
-<section>
-<h2>Leadership & Impact</h2>
-<div class="glass">
-<p>As Managing Director at One Sphere Array, I contribute to community outreach, advocacy efforts, and technology-driven initiatives.</p>
-<p>I helped support efforts to preserve California's Great America through petitions, public engagement, and awareness campaigns.</p>
-</div>
-</section>
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="section-head reveal">
+        <span class="idx">(05)</span>
+        <span class="section-kicker">Contact</span>
+      </div>
+      <h2 class="contact-title reveal">Let's build<br />something worth<br /><em>making.</em></h2>
+      <div class="contact-links reveal">
+        <a href="mailto:medisummarize@gmail.com" class="arrow-link big" data-magnetic>medisummarize@gmail.com <span>↗</span></a>
+        <a href="https://www.linkedin.com/in/pranav-c-70019b403/" target="_blank" rel="noopener" class="arrow-link big" data-magnetic>LinkedIn <span>↗</span></a>
+        <span class="contact-discord">Discord — thepc101</span>
+      </div>
+    </section>
+  </main>
 
-<section>
-<h2>Skills</h2>
-<div class="skills">
-<span>Web Development</span><span>Web Design</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
-<span>Debugging</span><span>Marketing</span><span>Leadership</span><span>Collaboration</span>
-<span>Problem Solving</span><span>AI Integration</span><span>Product Development</span>
-</div>
-</section>
+  <footer class="footer">
+    <div class="footer-top">
+      <span>© <span id="year"></span> — Pranav C.</span>
+      <a href="mailto:medisummarize@gmail.com">medisummarize@gmail.com</a>
+      <a href="https://www.linkedin.com/in/pranav-c-70019b403/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <span>Made with intent, not templates.</span>
+    </div>
+    <div class="footer-name reveal"><span class="foot-word">Pranav&nbsp;C.</span></div>
+  </footer>
 
-<section>
-<h2>Vision</h2>
-<div class="vision">Healthcare. Education. Community.</div>
-<p>I believe technology should solve real-world problems and make opportunities more accessible.</p>
-</section>
-
-<section>
-<h2>Let's Connect</h2>
-<div class="contact">
-<div class="glass"><h3>Email</h3><p>medisummarize@gmail.com</p></div>
-<div class="glass"><h3>Discord</h3><p>thepc101</p></div>
-</div>
-</section>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
