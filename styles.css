@@ -38,10 +38,13 @@ em { font-style: italic; }
 }
 
 /* ===== Custom cursor (desktop, fine pointer only) ===== */
-@media (pointer: fine) {
-  body { cursor: none; }
-  a, button, [data-magnetic], .venture-row { cursor: none; }
-}
+/* Native cursor is hidden only once JS has created the custom one (adds .cursor-active),
+   so a JS/caching failure can never leave you with no cursor at all. */
+body.cursor-active,
+body.cursor-active a,
+body.cursor-active button,
+body.cursor-active [data-magnetic],
+body.cursor-active .venture-row { cursor: none; }
 .cursor-dot, .cursor-ring {
   position: fixed; top: 0; left: 0; z-index: 9999; border-radius: 50%;
   transform: translate(-50%, -50%); pointer-events: none; will-change: transform;
