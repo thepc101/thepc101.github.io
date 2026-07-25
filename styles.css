@@ -297,3 +297,19 @@ a.role-org:hover { border-color: var(--accent); }
   /* Keep the marquee gently scrolling — it's the one motion that IS the content */
   .marquee-track { animation: scrollx 40s linear infinite !important; }
 }
+
+@media (pointer: fine) {
+  body, a, button, [data-magnetic], .venture-row { cursor: none; }
+}
+.cursor-dot, .cursor-ring {
+  position: fixed; top: 0; left: 0; z-index: 9999; border-radius: 50%;
+  transform: translate(-50%, -50%); pointer-events: none; will-change: transform;
+}
+.cursor-dot { width: 7px; height: 7px; background: var(--accent); }
+.cursor-ring {
+  width: 34px; height: 34px; border: 1.5px solid var(--accent);
+  transition: width .25s, height .25s, background .25s, border-color .25s;
+}
+.cursor-ring.hover { width: 60px; height: 60px; background: rgba(47,67,224,.12); }
+.cursor-ring.down  { width: 26px; height: 26px; }
+@media (hover: none), (pointer: coarse) { .cursor-dot, .cursor-ring { display: none; } }
